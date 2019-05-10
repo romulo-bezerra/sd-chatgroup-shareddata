@@ -1,2 +1,2 @@
-# sd-dados-compartilhados
-SD - shared data
+# sd-chatgroup-shareddata
+
