@@ -3,7 +3,8 @@ package br.edu.ifpb.chatgroup.controller;
 import br.edu.ifpb.chatgroup.abstration.CommandFileService;
 import br.edu.ifpb.chatgroup.model.Message;
 import br.edu.ifpb.chatgroup.service.CommandFileServiceImpl;
-import jcifs.smb.SmbFile;
+
+import java.util.ArrayList;
 
 public class CommandFileController {
 
@@ -13,12 +14,23 @@ public class CommandFileController {
         this.commandFileService = commandFileServiceImpl;
     }
 
-    public String readFile(SmbFile file) {
-        return commandFileService.readFile(file);
+    public ArrayList<Message> readFile() {
+        return commandFileService.readFile();
     }
 
-    public void writeFile(SmbFile file, Message message){
-        commandFileService.writeFile(file, message);
+    public void writeFile(Message message) {
+        commandFileService.writeFile(message);
     }
 
+    public int countLinesFile() {
+        return commandFileService.countLinesFile();
+    }
+
+    public ArrayList<Message> readFileFromLine(int linePosition) {
+        return commandFileService.readFileFromLine(linePosition);
+    }
+
+    public void printMessages(ArrayList<Message> messages, String login, boolean withMe) {
+        commandFileService.printMessages(messages, login, withMe);
+    }
 }
